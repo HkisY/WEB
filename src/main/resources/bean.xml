@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="java"></context:component-scan>
+
+    <!-- 实例化Log日志类 -->
+    <bean id="logInterceptor" class="Log"></bean>
+    <aop:aspectj-autoproxy />
+    <!-- 配置切面 -->
+    <!--<aop:config>-->
+        <!--&lt;!&ndash; 声明一个全局的切面   可以加在aspect内 &ndash;&gt;-->
+        <!--<aop:pointcut expression="execution(* Fruit..*.*(..))"-->
+                      <!--id="servicePoincut"/>-->
+        <!--&lt;!&ndash; 切面类 &ndash;&gt;-->
+        <!--<aop:aspect id="logaspect" ref="logInterceptor">-->
+            <!--&lt;!&ndash; 执行切面的方法 和引用的切面 &ndash;&gt;-->
+            <!--<aop:before method="before" pointcut-ref="servicePoincut"/>-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
+</beans>

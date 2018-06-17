@@ -1,0 +1,137 @@
+<<<<<<< HEAD
+=======
+<?xml version="1.0" encoding="utf-8"?>
+>>>>>>> 98ed588aad6e1250b55594a8f9e884b406f6aba1
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<<<<<<< HEAD
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <!-- context配置位置-->
+=======
+<web-app id="WebApp">
+  <!--站点名称-->
+  <display-name>My First WEBAPP</display-name>
+  <!--站点描述-->
+  <description>My first webApp,but i don`t know what should i build it</description>
+
+  <!--配置DispatcherServlet前置控制器-->
+  <!--拦截请求并分发到各控制器-->
+  <servlet>
+    <servlet-name>springDispatcher</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:springMVC.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>springDispatcher</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+  <!--spring容器初始化监听器  同时配置监听器所用到的配置文件-->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <!--监听器配置文件-->
+>>>>>>> 98ed588aad6e1250b55594a8f9e884b406f6aba1
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:applicationContext.xml</param-value>
+  </context-param>
+<<<<<<< HEAD
+  
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <welcome-file-list>
+    <welcome-file>/WEB-INF/hello.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>appServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextClass</param-name>
+      <param-value>/WEB-INF/hello/jsp</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>appServlet</servlet-name>
+    <url-pattern>/WEB-INF/*</url-pattern>
+  </servlet-mapping>
+=======
+
+  <!--web监控  Druid-->
+  <servlet>
+    <servlet-name>DruidStatView</servlet-name>
+    <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DruidStatView</servlet-name>
+    <url-pattern>/druid/*</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- 更改请求和响应的编码为utf-8 -->
+  <!--spring框架解决字符编码问题-->
+  <filter>
+    <filter-name>characterEncodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+      <param-name>forceEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>characterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>druidWebStatFilter</filter-name>
+    <filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>
+    <init-param>
+      <param-name>exclusions</param-name>
+      <param-value>/public/*,*.js,*.css,/druid*,*.jsp,*.swf</param-value>
+    </init-param>
+    <init-param>
+      <param-name>principalSessionName</param-name>
+      <param-value>sessionInfo</param-value>
+    </init-param>
+    <init-param>
+      <param-name>profileEnable</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>druidWebStatFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <!--指定图标位置-->
+  <icon>
+    <!--指定小图标地址 大小：16 X 16 pixel 格式：GIF or JPEG 扩展名（必须）：.gif or .jpg-->
+    <small-icon>/resources/smallIcon/*.gif</small-icon>
+    <!--指定大图标地址 大小：32 X 32 pixel 格式：GIF or JPEG 扩展名（必须）：.gif or .jpg-->
+    <large-icon>/resources/largeIcon/*.gif</large-icon>
+  </icon>
+
+  <!--欢迎页面-->
+  <welcome-file-list>
+    <welcome-file>Login.html</welcome-file>
+  </welcome-file-list>
+
+>>>>>>> 98ed588aad6e1250b55594a8f9e884b406f6aba1
+</web-app>
