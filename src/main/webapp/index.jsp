@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-<html>
-<body>
-<h2>Hello World!</h2>
-</body>
-</html>
-=======
 <%--
   Created by IntelliJ IDEA.
   User: hkisy
@@ -45,7 +38,7 @@
                     <div class="position">
                         <label>Username</label>
                     </div>
-                    <input id="username" name="username" type="text" placeholder="username">
+                    <input style="color: black;" id="username" name="username" type="text" placeholder="username">
                 </div>
 
                 <div class="bg-primary">
@@ -71,4 +64,3 @@
 
 
 
->>>>>>> 98ed588aad6e1250b55594a8f9e884b406f6aba1
